@@ -34,7 +34,7 @@ export const categories: Category[] = [
         id: "bio",
         title: "Malik Ali",
         subtitle: "Front-end developer · LA / OC",
-        icon: "/assets/icons/about.png",
+        icon: "/assets/icons/photo.png",
         body: [
           {
             type: "p",
@@ -54,7 +54,7 @@ export const categories: Category[] = [
         id: "experience",
         title: "Experience",
         subtitle: "Contract, independent, and in-house",
-        icon: "/assets/icons/memory-stick.png",
+        icon: "/assets/icons/update.png",
         body: [
           {
             type: "jobs",
@@ -106,7 +106,7 @@ export const categories: Category[] = [
         id: "where",
         title: "Where",
         subtitle: "Los Angeles / Orange County",
-        icon: "/assets/icons/faq.png",
+        icon: "/assets/icons/psp.png",
         body: [
           {
             type: "p",
@@ -118,7 +118,7 @@ export const categories: Category[] = [
         id: "available",
         title: "Availability",
         subtitle: "Front-end roles and contract",
-        icon: "/assets/icons/faq.png",
+        icon: "/assets/icons/date.png",
         body: [
           {
             type: "p",
@@ -130,7 +130,7 @@ export const categories: Category[] = [
         id: "stack",
         title: "Stack",
         subtitle: "What I actually use",
-        icon: "/assets/icons/faq.png",
+        icon: "/assets/icons/usb.png",
         body: [
           {
             type: "list",
@@ -249,7 +249,7 @@ export const categories: Category[] = [
         id: "email",
         title: "Email",
         subtitle: "malikali2164@gmail.com",
-        icon: "/assets/icons/contact.png",
+        icon: "/assets/icons/sharing.png",
         href: "mailto:malikali2164@gmail.com",
         body: [
           {
@@ -267,7 +267,7 @@ export const categories: Category[] = [
         id: "linkedin",
         title: "LinkedIn",
         subtitle: "malik-ali-msa",
-        icon: "/assets/icons/contact.png",
+        icon: "/assets/icons/psn.png",
         href: "https://linkedin.com/in/malik-ali-msa/",
         body: [
           {
@@ -288,7 +288,7 @@ export const categories: Category[] = [
         id: "github",
         title: "GitHub",
         subtitle: "github.com/Xboned",
-        icon: "/assets/icons/links.png",
+        icon: "/assets/icons/browser.png",
         href: "https://github.com/Xboned",
         body: [
           {
@@ -302,7 +302,7 @@ export const categories: Category[] = [
         id: "resume",
         title: "Resume",
         subtitle: "Malik Ali Resume.pdf",
-        icon: "/assets/icons/umd.png",
+        icon: "/assets/icons/savedata.png",
         href: "/Malik Ali Resume.pdf",
         download: true,
         body: [
@@ -330,7 +330,7 @@ export const categories: Category[] = [
         id: "wave",
         title: "XMB Wave",
         subtitle: "How this site is laid out",
-        icon: "/assets/icons/music.png",
+        icon: "/assets/icons/theme.png",
         body: [
           {
             type: "p",
