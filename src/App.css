@@ -113,11 +113,12 @@
   height: var(--icon);
   padding: 0;
   border: 0;
+  overflow: visible;
   background: transparent;
   color: #fff;
   cursor: pointer;
   opacity: 0.5;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.28s ease;
 }
 
 .icon-btn.is-active {
@@ -130,6 +131,13 @@
   height: 100%;
   object-fit: contain;
   mix-blend-mode: screen;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.icon-btn.is-active img {
+  transform: scale(1.38);
 }
 
 .icon-btn:focus-visible {
@@ -140,7 +148,7 @@
 .category-label {
   position: absolute;
   left: 50%;
-  top: calc(100% + 0px);
+  top: calc(100% + 18px);
   width: var(--icon);
   margin: 0;
   transform: translateX(-50%);
@@ -406,6 +414,7 @@
 @media (prefers-reduced-motion: reduce) {
   .category-row,
   .icon-btn,
+  .icon-btn img,
   .item {
     animation: none;
     transition: none;

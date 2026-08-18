@@ -154,31 +154,39 @@ export const categories: Category[] = [
       {
         id: "development",
         title: "Development",
-        subtitle: "HTML/CSS - React - Gatsby - Next.js",
+        subtitle: "HTML/CSS - TypeScript - React - Vite",
         icon: "/assets/icons/umd.png",
         body: [
           {
             type: "jobs",
             jobs: [
               {
-                title: "Tempura Inc. marketing homepage",
-                meta: "HTML, CSS, JavaScript · Cloudflare Workers",
+                title: "This site (malikalidev.com)",
+                meta: "React, TypeScript, Vite · Cloudflare Workers",
                 points: [
-                  "Static homepage with skip link, responsive nav, self-hosted fonts, and CSP headers.",
+                  "PSP XMB shell from a Figma file: category row, item column, keyboard and touch, animated wave backdrop.",
+                  "Git deploy from github.com/Xboned/malik-ali-portfolio, with CSP headers, robots.txt, and security.txt.",
+                ],
+              },
+              {
+                title: "Tempura Inc. marketing homepage",
+                meta: "HTML, CSS, JavaScript · Cloudflare Workers · May 2026 – Present",
+                points: [
+                  "Static homepage with skip link, responsive nav, self-hosted fonts, and Content-Security-Policy headers.",
                   "develop branch for preview deploys; main for production.",
                 ],
               },
               {
                 title: "Nest & Nooks (dormsheets.com)",
-                meta: "Shopify · Liquid",
+                meta: "Shopify · Liquid · 2026",
                 points: [
-                  "FLAT30: 30% off the second Flat Sheet when two flats are in the cart, combined with existing bundle discounts.",
-                  "Delayed promo overlay with rotating codes (FLAT30, FIT30, DUV30), Shopify Forms signup tags, and a mobile announcement bar that does not sit under the floating menu.",
+                  "FLAT30: 30% off the second Flat Sheet when two flats are in the cart, combined with existing bundle discounts, then tested cart and checkout.",
+                  "Delayed promo overlay with rotating codes (FLAT30, FIT30, DUV30), Shopify Forms signup tags, and a mobile announcement bar placed so the floating menu does not cover the offer.",
                 ],
               },
               {
                 title: "Sculpt Spa booking funnel",
-                meta: "React, TypeScript, Vite, Tailwind, shadcn/ui",
+                meta: "React, TypeScript, Vite, Tailwind, shadcn/ui · 2026",
                 points: [
                   "Service cards, week calendar, time slots, and a validated client form.",
                   "Talks to Boulevard for live services and availability.",
@@ -186,17 +194,17 @@ export const categories: Category[] = [
               },
               {
                 title: "CoScript",
-                meta: "Figma → HTML, CSS, JavaScript",
+                meta: "Figma → HTML, CSS, JavaScript · Aug 2024 – May 2026",
                 points: [
-                  "Designed and built responsive pages against brand rules and launch dates.",
-                  "On-page SEO (titles, meta, alt, headings) and Analytics-driven layout changes.",
+                  "Designed responsive pages and UI in Figma, then implemented them as HTML, CSS, and JavaScript.",
+                  "Titles, meta tags, alt text, and heading structure, plus Analytics-driven layout changes.",
                 ],
               },
               {
                 title: "Steelgem",
-                meta: "WordPress",
+                meta: "WordPress · May 2025 – Jan 2026",
                 points: [
-                  "Page builds, content, layout, and QA in an agile task queue with design and marketing.",
+                  "Built and updated WordPress pages (content, layout, QA) so launches stayed accurate and on time.",
                 ],
               },
             ],
@@ -211,22 +219,21 @@ export const categories: Category[] = [
       {
         id: "tools",
         title: "Tools",
-        subtitle: "Figma - VS Code - Elementor - WordPress - Vercel",
+        subtitle: "Figma - VS Code - Git - Cloudflare - Shopify",
         icon: "/assets/icons/memory-stick.png",
         body: [
           {
             type: "p",
-            text: "What I use to get pages out the door:",
+            text: "From the resume, grouped the way I actually use them:",
           },
           {
             type: "list",
             items: [
-              "Figma for layout and handoff",
-              "VS Code and Git",
-              "Elementor and WordPress for marketing sites",
-              "Shopify theme editor, Liquid, and cart scripts",
-              "Cloudflare and Vercel for deploys",
-              "Google Analytics for drop-off",
+              "Languages: HTML, CSS, JavaScript, TypeScript",
+              "Libraries / frameworks: React, Next.js, Gatsby, Vite, Tailwind CSS",
+              "CMS / commerce: Shopify (Liquid, theme sections, cart scripts), WordPress, Elementor",
+              "Design: Figma, Adobe Creative Suite, Canva",
+              "Tooling: Git, VS Code, Cloudflare, Vercel, Google Analytics",
             ],
           },
         ],
@@ -315,14 +322,14 @@ export const categories: Category[] = [
     ],
   },
   {
-    id: "music",
-    label: "Music",
+    id: "theme",
+    label: "Theme",
     icon: "/assets/icons/music.png",
     items: [
       {
         id: "wave",
         title: "XMB Wave",
-        subtitle: "This page's theme",
+        subtitle: "How this site is laid out",
         icon: "/assets/icons/music.png",
         body: [
           {
