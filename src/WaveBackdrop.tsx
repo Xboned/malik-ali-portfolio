@@ -110,10 +110,12 @@ export function WaveBackdrop() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
+    const node = canvasRef.current
+    const context = node?.getContext("2d") ?? null
+    if (!node || !context) return
+
+    const canvas: HTMLCanvasElement = node
+    const ctx: CanvasRenderingContext2D = context
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)")
     let frame = 0

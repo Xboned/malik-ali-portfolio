@@ -27,7 +27,7 @@ Live site: [malikalidev.com](https://malikalidev.com/). Apex and `www` are Custo
 
 Connect the GitHub repo in **Workers & Pages → Import a repository**. Pushes to `develop` should stay on a preview URL. Merges to `main` go live.
 
-`wrangler.jsonc` points assets at `./dist` and attaches `malikalidev.com` plus `www.malikalidev.com`. `_headers` is copied from `public/` into that build.
+`wrangler.jsonc` points assets at `./dist` and attaches `malikalidev.com` plus `www.malikalidev.com`. `_headers` is copied from `public/` into that build. `robots.txt` allows search and AI answers (`search=yes, ai-input=yes`) and blocks training crawlers (`ai-train=no`). `/.well-known/security.txt` points vulnerability reports at the contact email.
 
 To publish from this folder without git:
 
