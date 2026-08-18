@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# search=yes, ai-input=yes, ai-train=no
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /

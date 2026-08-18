@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Anek Latin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/anek-latin-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Anek Latin";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/anek-latin-500.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Anek Latin", system-ui, sans-serif;
+  font-weight: 400;
+  font-variation-settings: "wdth" 100;
+  color: #fff;
+  background: #2a054a;
+  overflow: hidden;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 40;
+  padding: 8px 12px;
+  background: #fff;
+  color: #2a054a;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "malik-ali-portfolio",
+  "compatibility_date": "2026-08-18",
+  "preview_urls": true,
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    { "pattern": "malikalidev.com", "custom_domain": true },
+    { "pattern": "www.malikalidev.com", "custom_domain": true }
+  ]
+}

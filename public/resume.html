@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Malik Ali - Front-End Developer</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.48in 0.55in 0.42in 0.55in;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.28;
+    }
+    .page {
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 3px;
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .contact {
+      font-size: 9.4pt;
+      color: #333;
+    }
+    .contact a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    h2 {
+      margin: 9px 0 5px;
+      padding-bottom: 2px;
+      font-size: 10.2pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1.4px solid #1a1a1a;
+    }
+    .summary {
+      margin: 0;
+    }
+    .skills {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .skills li {
+      margin: 0 0 2px;
+    }
+    .skills span {
+      font-weight: 700;
+    }
+    .job {
+      margin: 0 0 6px;
+    }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .job-title {
+      font-weight: 700;
+    }
+    .job-meta {
+      font-size: 9.4pt;
+      color: #333;
+      white-space: nowrap;
+    }
+    .job-sub {
+      font-style: italic;
+      margin: 1px 0 3px;
+      color: #222;
+    }
+    .client {
+      margin: 5px 0 2px;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+    ul {
+      margin: 0;
+      padding: 0 0 0 16px;
+    }
+    li {
+      margin: 0 0 2.5px;
+    }
+    .edu-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Malik Ali</h1>
+      <p class="contact">
+        Los Angeles / Orange County, CA
+        &nbsp;|&nbsp;
+        (951) 284-5258
+        &nbsp;|&nbsp;
+        <a href="mailto:malikali2164@gmail.com">malikali2164@gmail.com</a>
+        <br>
+        <a href="https://github.com/Xboned">github.com/Xboned</a>
+        &nbsp;|&nbsp;
+        <a href="https://linkedin.com/in/malik-ali-msa/">linkedin.com/in/malik-ali-msa</a>
+      </p>
+    </header>
+
+    <h2>Summary</h2>
+    <p class="summary">
+      Front-end developer who ships production websites and UI in HTML, CSS, JavaScript, TypeScript, and React.
+      Builds Shopify and WordPress storefronts, turns Figma files into page layouts, and handles QA, on-page SEO, and analytics on work that has to go live.
+    </p>
+
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li><span>Languages:</span> HTML, CSS, JavaScript, TypeScript</li>
+      <li><span>Libraries / frameworks:</span> React, Next.js, Gatsby, Vite, Tailwind CSS</li>
+      <li><span>CMS / commerce:</span> Shopify (Liquid, theme sections, cart scripts), WordPress, Elementor</li>
+      <li><span>Design:</span> Figma, Adobe Creative Suite, Canva</li>
+      <li><span>Tooling:</span> Git, VS Code, Cloudflare, Vercel, Google Analytics</li>
+    </ul>
+
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Front-End Developer (Contract), Tempura Inc.</div>
+        <div class="job-meta">May 2026 - Present</div>
+      </div>
+      <div class="job-sub">United States (Remote)</div>
+      <ul>
+        <li>Built the company marketing homepage in static HTML, CSS, and JavaScript on Cloudflare, with a skip link, responsive nav, self-hosted fonts, and Content-Security-Policy headers.</li>
+        <li>Set a develop/main preview-to-production workflow so staging deploys stay off the live site until a change is ready.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Front-End Developer (Independent)</div>
+        <div class="job-meta">2026 - Present</div>
+      </div>
+      <div class="job-sub">Orange County, CA</div>
+
+      <div class="client">Nest &amp; Nooks (dormsheets.com), Shopify</div>
+      <ul>
+        <li>Implemented FLAT30 cart logic: 30% off the second Flat Sheet when two flats are in the cart, combined with existing bundle discounts, then tested cart and checkout.</li>
+        <li>Built a delayed promo overlay with rotating codes (FLAT30, FIT30, DUV30), Shopify Forms signup tags, and a mobile announcement bar placed so the floating menu does not cover the offer.</li>
+      </ul>
+
+      <div class="client">Sculpt Spa, booking app</div>
+      <ul>
+        <li>Built a React + TypeScript + Vite booking funnel (service cards, week calendar, time slots, validated client form) with Tailwind and shadcn/ui, talking to Boulevard for live services and availability.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">User Experience Designer (Contract), CoScript</div>
+        <div class="job-meta">Aug 2024 - May 2026</div>
+      </div>
+      <div class="job-sub">United States (Hybrid)</div>
+      <ul>
+        <li>Designed responsive pages and UI in Figma, then implemented them as HTML, CSS, and JavaScript.</li>
+        <li>Partnered with marketing and development on page updates against brand rules and launch dates.</li>
+        <li>Added titles, meta tags, alt text, and heading structure so pages could be crawled and understood.</li>
+        <li>Used Google Analytics to find drop-off points, then changed layout and content hierarchy.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Marketing Assistant, Steelgem</div>
+        <div class="job-meta">May 2025 - Jan 2026</div>
+      </div>
+      <div class="job-sub">Santa Ana, CA (On-site)</div>
+      <ul>
+        <li>Built and updated WordPress pages (content, layout, QA) so launches stayed accurate and on time.</li>
+        <li>Worked with design, development, and marketing in an agile task queue.</li>
+        <li>Produced web and mobile assets in Figma, Canva, and Adobe Creative Suite.</li>
+        <li>Wrote and edited blogs, landing pages, social captions, and email copy.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-head">
+      <div>
+        <strong>California State Polytechnic University, Pomona</strong><br>
+        Mathematics &amp; Statistics
+      </div>
+      <div class="job-meta">2018 - 2024</div>
+    </div>
+  </div>
+</body>
+</html>
