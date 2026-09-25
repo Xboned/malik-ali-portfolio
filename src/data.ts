@@ -54,7 +54,7 @@ export const categories: Category[] = [
         id: "experience",
         title: "Experience",
         subtitle: "Contract, independent, and in-house",
-        icon: "/assets/icons/update.png",
+        icon: "/assets/icons/video.png",
         body: [
           {
             type: "jobs",
@@ -106,7 +106,7 @@ export const categories: Category[] = [
         id: "where",
         title: "Where",
         subtitle: "Los Angeles / Orange County",
-        icon: "/assets/icons/psp.png",
+        icon: "/assets/icons/remote.png",
         body: [
           {
             type: "p",
@@ -130,7 +130,7 @@ export const categories: Category[] = [
         id: "stack",
         title: "Stack",
         subtitle: "HTML, CSS, JS, TypeScript",
-        icon: "/assets/icons/usb.png",
+        icon: "/assets/icons/memory-stick.png",
         body: [
           {
             type: "list",
@@ -155,7 +155,7 @@ export const categories: Category[] = [
         id: "development",
         title: "Development",
         subtitle: "HTML/CSS - TypeScript - React - Vite",
-        icon: "/assets/icons/umd.png",
+        icon: "/assets/icons/browser.png",
         body: [
           {
             type: "jobs",
@@ -220,7 +220,7 @@ export const categories: Category[] = [
         id: "tools",
         title: "Tools",
         subtitle: "Figma - VS Code - Git - Cloudflare - Shopify",
-        icon: "/assets/icons/memory-stick.png",
+        icon: "/assets/icons/usb.png",
         body: [
           {
             type: "p",
@@ -288,7 +288,7 @@ export const categories: Category[] = [
         id: "github",
         title: "GitHub",
         subtitle: "github.com/Xboned",
-        icon: "/assets/icons/browser.png",
+        icon: "/assets/icons/umd.png",
         href: "https://github.com/Xboned",
         body: [
           {
