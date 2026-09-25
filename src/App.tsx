@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react"
+import { StatusClock } from "./StatusClock"
 import { WaveBackdrop } from "./WaveBackdrop"
 import { categories, START_CATEGORY, type Block, type Item } from "./data"
 import "./App.css"
@@ -7,48 +8,52 @@ function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks.map((block, index) => {
-        if (block.type === "p") {
-          return <p key={index}>{block.text}</p>
+        switch (block.type) {
+          case "p":
+            return <p key={index}>{block.text}</p>
+          case "list":
+            return (
+              <ul key={index}>
+                {block.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )
+          case "jobs":
+            return (
+              <div key={index}>
+                {block.jobs.map((job) => (
+                  <article className="job" key={job.title}>
+                    <h3>{job.title}</h3>
+                    <p className="job-meta">{job.meta}</p>
+                    <ul>
+                      {job.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            )
+          case "link":
+            return (
+              <div className="panel-links" key={index}>
+                <a
+                  href={block.href}
+                  {...(block.download ? { download: true } : {})}
+                  {...(block.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {block.label}
+                </a>
+              </div>
+            )
+          default: {
+            const _never: never = block
+            return _never
+          }
         }
-        if (block.type === "list") {
-          return (
-            <ul key={index}>
-              {block.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          )
-        }
-        if (block.type === "jobs") {
-          return (
-            <div key={index}>
-              {block.jobs.map((job) => (
-                <article className="job" key={job.title}>
-                  <h3>{job.title}</h3>
-                  <p className="job-meta">{job.meta}</p>
-                  <ul>
-                    {job.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          )
-        }
-        return (
-          <div className="panel-links" key={index}>
-            <a
-              href={block.href}
-              {...(block.download ? { download: true } : {})}
-              {...(block.href.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              {block.label}
-            </a>
-          </div>
-        )
       })}
     </>
   )
@@ -59,8 +64,9 @@ export default function App() {
   const [itemIndex, setItemIndex] = useState(0)
   const [openItem, setOpenItem] = useState<Item | null>(null)
   const shellRef = useRef<HTMLDivElement>(null)
+  const panelRef = useRef<HTMLElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
-  const touchX = useRef<number | null>(null)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
   const labelId = useId()
 
   const category = categories[catIndex]
@@ -97,6 +103,22 @@ export default function App() {
         if (event.key === "Escape") {
           event.preventDefault()
           close()
+          return
+        }
+        if (event.key === "Tab" && panelRef.current) {
+          const focusable = [
+            ...panelRef.current.querySelectorAll<HTMLElement>("a[href], button"),
+          ]
+          if (focusable.length === 0) return
+          const first = focusable[0]
+          const last = focusable[focusable.length - 1]
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault()
+            last.focus()
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault()
+            first.focus()
+          }
         }
         return
       }
@@ -118,6 +140,12 @@ export default function App() {
       } else if (event.key === "ArrowDown") {
         event.preventDefault()
         setItemIndex((current) => Math.min(lastItem, current + 1))
+      } else if (event.key === "Home") {
+        event.preventDefault()
+        setItemIndex(0)
+      } else if (event.key === "End") {
+        event.preventDefault()
+        setItemIndex(lastItem)
       } else if (event.key === "Enter" || event.key === " ") {
         event.preventDefault()
         const item = items[itemIndex]
@@ -139,19 +167,34 @@ export default function App() {
         ref={shellRef}
         tabIndex={-1}
         onTouchStart={(event) => {
-          touchX.current = event.changedTouches[0]?.clientX ?? null
+          const point = event.changedTouches[0]
+          touchStart.current =
+            point == null ? null : { x: point.clientX, y: point.clientY }
         }}
         onTouchEnd={(event) => {
-          if (openItem || touchX.current == null) return
-          const end = event.changedTouches[0]?.clientX ?? touchX.current
-          const delta = end - touchX.current
-          touchX.current = null
-          if (delta > 40) {
-            setCatIndex((current) => Math.max(0, current - 1))
-            setItemIndex(0)
-          } else if (delta < -40) {
-            setCatIndex((current) => Math.min(categories.length - 1, current + 1))
-            setItemIndex(0)
+          if (openItem || touchStart.current == null) return
+          const point = event.changedTouches[0]
+          if (point == null) return
+          const dx = point.clientX - touchStart.current.x
+          const dy = point.clientY - touchStart.current.y
+          touchStart.current = null
+          if (Math.abs(dx) >= Math.abs(dy) && Math.abs(dx) > 40) {
+            if (dx > 0) {
+              setCatIndex((current) => Math.max(0, current - 1))
+              setItemIndex(0)
+            } else {
+              setCatIndex((current) => Math.min(categories.length - 1, current + 1))
+              setItemIndex(0)
+            }
+            return
+          }
+          if (Math.abs(dy) > 40) {
+            const lastItem = Math.max(0, items.length - 1)
+            if (dy > 0) {
+              setItemIndex((current) => Math.max(0, current - 1))
+            } else {
+              setItemIndex((current) => Math.min(lastItem, current + 1))
+            }
           }
         }}
       >
@@ -159,7 +202,8 @@ export default function App() {
 
         <div className="profile">
           <p className="profile-name">Malik Ali</p>
-          <div className="profile-battery">
+          <StatusClock />
+          <div className="profile-battery" aria-hidden="true">
             <img src="/assets/icons/battery.png" alt="" width={51} height={51} />
           </div>
         </div>
@@ -179,6 +223,7 @@ export default function App() {
                   type="button"
                   className={selected ? "icon-btn is-active" : "icon-btn"}
                   role="tab"
+                  aria-label={entry.label}
                   aria-selected={selected}
                   aria-controls={labelId}
                   id={`${entry.id}-tab`}
@@ -199,6 +244,7 @@ export default function App() {
 
           <div
             className="item-column"
+            key={category.id}
             id={labelId}
             role="listbox"
             aria-label={`${category.label} items`}
@@ -233,7 +279,9 @@ export default function App() {
           </div>
         </div>
 
-        <p className="hint">← → categories · ↑ ↓ items · Enter open · Esc close</p>
+        <p className="hint">
+          Arrow keys move. Enter opens. Esc closes. Swipe on a phone.
+        </p>
 
         {openItem ? (
           <>
@@ -243,7 +291,13 @@ export default function App() {
               aria-label="Close panel"
               onClick={close}
             />
-            <aside className="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+            <aside
+              className="panel"
+              ref={panelRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="panel-title"
+            >
               <button
                 ref={closeRef}
                 type="button"

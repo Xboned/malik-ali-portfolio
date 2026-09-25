@@ -42,11 +42,11 @@ export const categories: Category[] = [
           },
           {
             type: "p",
-            text: "Day to day that means Shopify and WordPress storefronts, turning Figma files into page layouts, and handling QA, on-page SEO, and analytics on work that has to go live.",
+            text: "I build Shopify and WordPress storefronts, turn Figma files into layouts, and handle QA, on-page SEO, and analytics on work that has to go live.",
           },
           {
             type: "p",
-            text: "Mathematics & Statistics, Cal Poly Pomona, 2018–2024.",
+            text: "Mathematics & Statistics, Cal Poly Pomona, 2018-2024.",
           },
         ],
       },
@@ -61,7 +61,7 @@ export const categories: Category[] = [
             jobs: [
               {
                 title: "Front-End Developer (Contract), Tempura Inc.",
-                meta: "May 2026 – Present · Remote",
+                meta: "May 2026 - Present · Remote",
                 points: [
                   "Built the company marketing homepage in static HTML, CSS, and JavaScript on Cloudflare, with a skip link, responsive nav, self-hosted fonts, and Content-Security-Policy headers.",
                   "Set a develop/main preview-to-production workflow so staging deploys stay off the live site until a change is ready.",
@@ -69,7 +69,7 @@ export const categories: Category[] = [
               },
               {
                 title: "Front-End Developer (Independent)",
-                meta: "2026 – Present · Orange County, CA",
+                meta: "2026 - Present · Orange County, CA",
                 points: [
                   "Nest & Nooks (dormsheets.com): FLAT30 cart logic, delayed promo overlay, and a mobile announcement bar on Shopify.",
                   "Sculpt Spa: React + TypeScript + Vite booking funnel with Tailwind and shadcn/ui, talking to Boulevard for live services and availability.",
@@ -77,7 +77,7 @@ export const categories: Category[] = [
               },
               {
                 title: "User Experience Designer (Contract), CoScript",
-                meta: "Aug 2024 – May 2026 · Hybrid",
+                meta: "Aug 2024 - May 2026 · Hybrid",
                 points: [
                   "Designed responsive pages and UI in Figma, then implemented them as HTML, CSS, and JavaScript.",
                   "Added titles, meta tags, alt text, and heading structure, and used Google Analytics to find drop-off points.",
@@ -85,7 +85,7 @@ export const categories: Category[] = [
               },
               {
                 title: "Marketing Assistant, Steelgem",
-                meta: "May 2025 – Jan 2026 · Santa Ana, CA",
+                meta: "May 2025 - Jan 2026 · Santa Ana, CA",
                 points: [
                   "Built and updated WordPress pages so launches stayed accurate and on time.",
                   "Produced web and mobile assets in Figma, Canva, and Adobe Creative Suite.",
@@ -129,14 +129,14 @@ export const categories: Category[] = [
       {
         id: "stack",
         title: "Stack",
-        subtitle: "What I actually use",
+        subtitle: "HTML, CSS, JS, TypeScript",
         icon: "/assets/icons/usb.png",
         body: [
           {
             type: "list",
             items: [
               "HTML, CSS, JavaScript, TypeScript",
-              "React, Next.js, Gatsby, Vite",
+              "React, Next.js, Gatsby, Vite, Tailwind CSS",
               "Shopify (Liquid, theme sections, cart scripts)",
               "WordPress, Elementor",
               "Figma, Git, Cloudflare, Vercel, Google Analytics",
@@ -170,7 +170,7 @@ export const categories: Category[] = [
               },
               {
                 title: "Tempura Inc. marketing homepage",
-                meta: "HTML, CSS, JavaScript · Cloudflare Workers · May 2026 – Present",
+                meta: "HTML, CSS, JavaScript · Cloudflare Workers · May 2026 - Present",
                 points: [
                   "Static homepage with skip link, responsive nav, self-hosted fonts, and Content-Security-Policy headers.",
                   "develop branch for preview deploys; main for production.",
@@ -194,7 +194,7 @@ export const categories: Category[] = [
               },
               {
                 title: "CoScript",
-                meta: "Figma → HTML, CSS, JavaScript · Aug 2024 – May 2026",
+                meta: "Figma to HTML, CSS, JavaScript · Aug 2024 - May 2026",
                 points: [
                   "Designed responsive pages and UI in Figma, then implemented them as HTML, CSS, and JavaScript.",
                   "Titles, meta tags, alt text, and heading structure, plus Analytics-driven layout changes.",
@@ -202,7 +202,7 @@ export const categories: Category[] = [
               },
               {
                 title: "Steelgem",
-                meta: "WordPress · May 2025 – Jan 2026",
+                meta: "WordPress · May 2025 - Jan 2026",
                 points: [
                   "Built and updated WordPress pages (content, layout, QA) so launches stayed accurate and on time.",
                 ],
@@ -224,7 +224,7 @@ export const categories: Category[] = [
         body: [
           {
             type: "p",
-            text: "From the resume, grouped the way I actually use them:",
+            text: "Grouped the way I use them on shipped work:",
           },
           {
             type: "list",

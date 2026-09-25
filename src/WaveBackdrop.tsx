@@ -67,6 +67,10 @@ const ribbons: Ribbon[] = [
   },
 ]
 
+const DRAW_SCALE = 0.5
+const FRAME_MS = 33
+const STEP = 10
+
 function waveY(x: number, t: number, ribbon: Ribbon, base: number) {
   return (
     base +
@@ -83,9 +87,8 @@ function drawRibbon(
   ribbon: Ribbon,
 ) {
   const base = ribbon.y * height
-  const step = 6
   ctx.beginPath()
-  for (let x = 0; x <= width + step; x += step) {
+  for (let x = 0; x <= width + STEP; x += STEP) {
     const y = waveY(x, t, ribbon, base)
     if (x === 0) ctx.moveTo(x, y)
     else ctx.lineTo(x, y)
@@ -111,7 +114,7 @@ export function WaveBackdrop() {
 
   useEffect(() => {
     const node = canvasRef.current
-    const context = node?.getContext("2d") ?? null
+    const context = node?.getContext("2d", { alpha: true }) ?? null
     if (!node || !context) return
 
     const canvas: HTMLCanvasElement = node
@@ -119,20 +122,20 @@ export function WaveBackdrop() {
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)")
     let frame = 0
+    let last = 0
     let running = !motion.matches
 
     function size() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
       const width = canvas.clientWidth
       const height = canvas.clientHeight
-      canvas.width = Math.round(width * dpr)
-      canvas.height = Math.round(height * dpr)
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      canvas.width = Math.max(1, Math.round(width * DRAW_SCALE))
+      canvas.height = Math.max(1, Math.round(height * DRAW_SCALE))
     }
 
     function paint(t: number) {
-      const width = canvas.clientWidth
-      const height = canvas.clientHeight
+      const width = canvas.width / DRAW_SCALE
+      const height = canvas.height / DRAW_SCALE
+      ctx.setTransform(DRAW_SCALE, 0, 0, DRAW_SCALE, 0, 0)
       ctx.clearRect(0, 0, width, height)
       for (const ribbon of ribbons) {
         drawRibbon(ctx, width, height, t, ribbon)
@@ -140,7 +143,10 @@ export function WaveBackdrop() {
     }
 
     function tick(now: number) {
-      paint(now)
+      if (now - last >= FRAME_MS) {
+        last = now
+        paint(now)
+      }
       if (running) frame = requestAnimationFrame(tick)
     }
 
@@ -174,6 +180,8 @@ export function WaveBackdrop() {
         alt=""
         width={1820}
         height={1024}
+        decoding="async"
+        fetchPriority="low"
       />
       <canvas className="wave-canvas" ref={canvasRef} aria-hidden="true" />
     </>
